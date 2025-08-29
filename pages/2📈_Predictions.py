@@ -1,11 +1,11 @@
 import streamlit as st
 from Backend import get_movie_database, find_similar_movies
-from UI_components import render_sidebar_navigation
+#from UI_components import render_sidebar_navigation
 
 # Navigation
 # Fake sidebar title inside main page content
 
-render_sidebar_navigation()
+#render_sidebar_navigation()
 
 st.title("🔮 Movie Recommendation System")
 
@@ -42,13 +42,13 @@ movie_description = st.text_area(
 st.caption("💡 Try these examples:")
 examples = st.columns(3)
 with examples[0]:
-    if st.button("Space Adventure", use_container_width=True):
+    if st.button("Space Adventure", width="stretch"):
         st.session_state.movie_desc = "A space adventure with aliens and spaceships"
 with examples[1]:
-    if st.button("Romantic Drama", use_container_width=True):
+    if st.button("Romantic Drama", width="stretch"):
         st.session_state.movie_desc = "A romantic story about two people falling in love"
 with examples[2]:
-    if st.button("Action Hero", use_container_width=True):
+    if st.button("Action Hero", width="stretch"):
         st.session_state.movie_desc = "An action hero saving the world from villains"
 
 # Initialize session state
@@ -107,7 +107,7 @@ if st.button("🎯 Get Your Prediction", type="primary"):
 with st.expander("📋 Browse Available Movies"):
     st.dataframe(
         movie_db[['title', 'rating', 'description']].head(10),
-        use_container_width=True,
+        width="stretch",
         hide_index=True
     )
     st.caption(f"Showing 10 of {len(movie_db)} available movies")

@@ -1,5 +1,5 @@
 import streamlit as st
-from UI_components import render_sidebar_navigation
+#from UI_components import render_sidebar_navigation
 from Backend import create_db_engine, get_movie_database
 from sqlalchemy import text
 
@@ -13,7 +13,7 @@ st.set_page_config(
 # Navigation
 # Fake sidebar title inside main page content
 #st.sidebar.markdown("## 🎬 Sakila DVD Rental")
-render_sidebar_navigation()
+#render_sidebar_navigation()
 
 # Main content
 st.title("🎬 Sakila DVD Rental Store Analysis")
